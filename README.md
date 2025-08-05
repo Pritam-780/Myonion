@@ -40,7 +40,23 @@ git clone https://github.com/Pritam-780/Myonion.git
 ```
 cd Myonion
 ```
+# 5. Create Tor Configuration File
+This command creates the `torrc` file that tells Tor where to create the `.onion` service and how to forward requests to your Python server.
 
+```bash
+echo -e "HiddenServiceDir /data/data/com.termux/files/home/.tor/hidden_service3\nHiddenServicePort 80 127.0.0.1:8080" > torrc
+````
+## 🔍 Step 6: Verify the torrc File
+
+After creating the configuration file, make sure it looks correct:
+```
+cat torrc
+```
+You should see something like:⬇️
+
+HiddenServiceDir /data/data/com.termux/files/home/.tor/hidden_service3
+HiddenServicePort 80 127.0.0.1:8080
+---
 # 5. Copy torrc file to correct location
 ```
 cp torrc ~/.torrc
