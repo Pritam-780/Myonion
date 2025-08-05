@@ -57,29 +57,29 @@ You should see something like:⬇️
 HiddenServiceDir /data/data/com.termux/files/home/.tor/hidden_service3
 HiddenServicePort 80 127.0.0.1:8080
 ---
-# 5. Copy torrc file to correct location
+# 7. Copy torrc file to correct location
 ```
 cp torrc ~/.torrc
 ```
 
-# 6. Start Python web server (on port 8080)
+# 8. Start Python web server (on port 8080)
 ```
 nohup python3 -m http.server 8080 > server.log 2>&1 &
 ```
-# 7. Start Tor in background
+# 9. Start Tor in background
 ```
 nohup tor -f ~/.torrc > tor.log 2>&1 &
 ```
-# 8. Wait 10-15 seconds, then get your .onion link
+# 10. Wait 10-15 seconds, then get your .onion link
 ```
 cat ~/.tor/hidden_service3/hostname
 ```
 
-# 9. To edit your HTML site
+# 11. To edit your HTML site
 ```
 nano index.html
 ```
-# 10. To stop the server anytime
+# 12. To stop the server anytime
 ```
 pkill python3
 pkill tor
